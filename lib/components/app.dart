@@ -1,46 +1,19 @@
-// Flutter code sample for BottomNavigationBar
-
-// This example shows a [BottomNavigationBar] as it is used within a [Scaffold]
-// widget. The [BottomNavigationBar] has three [BottomNavigationBarItem]
-// widgets and the [currentIndex] is set to index 0. The selected item is
-// amber. The `_onItemTapped` function changes the selected item's index
-// and displays a corresponding message in the center of the [Scaffold].
-//
-// ![A scaffold with a bottom navigation bar containing three bottom navigation
-// bar items. The first one is selected.](https://flutter.github.io/assets-for-api-docs/assets/material/bottom_navigation_bar.png)
-
 import 'package:flutter/material.dart';
-import 'getStarted.dart';
+import 'home.dart';
 
 /// This Widget is the main application widget.
-class MyApp extends StatelessWidget {
-  static const String _title = 'Flutter Code Sample';
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: _title,
-      home: HorizontalScroll(),
-    );
-  }
+class MyApp extends StatefulWidget {
+    @override
+    State<StatefulWidget> createState() {
+        return MyAppWidgetState();
+    }
 }
 
-class MyStatefulWidget extends StatefulWidget {
-  MyStatefulWidget({Key key}) : super(key: key);
-
-  @override
-  _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
-}
-
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+class MyAppWidgetState extends State<MyApp> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle( fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
+  static const TextStyle optionStyle = TextStyle( fontSize: 30, fontWeight: FontWeight.bold);
+  final _pageOptions = [
+    HorizontalScroll(),
     Text(
       'Index 1: Bookmarks',
       style: optionStyle,
@@ -59,18 +32,19 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   @override
   Widget build(BuildContext context) {
-
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('BottomNavigationBar Sample'),
+    return MaterialApp(
+        theme: ThemeData(
+        primarySwatch: Colors.grey,
+        primaryTextTheme: TextTheme(
+          title: TextStyle(color: Colors.white),
+        ),
       ),
-      body: Container(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
+      home:  Scaffold(
+      body: Container( child: _pageOptions.elementAt(_selectedIndex)),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home, color: Colors.grey,),
+            icon: Icon(Icons.home, color: Colors.grey),
             title: Text('Home'),
           ),
           BottomNavigationBarItem(
@@ -87,6 +61,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         onTap: _onItemTapped,
         type: BottomNavigationBarType.shifting,
       ),
-    );
+    ),
+  );
   }
 }
