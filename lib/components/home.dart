@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'search.dart';
 import 'allRecipes.dart';
+import 'selectedRecipe.dart';
+import 'healthyFood.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -8,15 +11,19 @@ class Home extends StatelessWidget {
     // TODO: implement build
     return Container(
       color: Colors.grey[100],
-      padding: EdgeInsets.all(15),
-      child: Column(
+      // padding: EdgeInsets.all(15),
+      child: ListView(
+        // padding: EdgeInsets.only(right:15),
+        scrollDirection: Axis.vertical,
         children: <Widget> [
           HorizontalScroll(),
           SearchBar(),
           Recipes(),
+          SelectedRecipe(),
+          HealthyRecipes()
         ]
       ),
-    );
+      );
   }
 }
 

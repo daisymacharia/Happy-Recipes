@@ -13,7 +13,9 @@ class SearchState extends State<SearchBar> {
 
   @override
   Widget build(BuildContext context) {
-    return  TextField(
+    return  Container(
+      padding: EdgeInsets.only(right:10, left: 10),
+      child: TextField(
       decoration: new InputDecoration(
         filled: true,
         fillColor: Colors.white,
@@ -27,6 +29,7 @@ class SearchState extends State<SearchBar> {
           ),
         ),
       ),
-    );
+    ),
+  );
   }
 }

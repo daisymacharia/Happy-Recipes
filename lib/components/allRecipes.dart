@@ -34,7 +34,8 @@ class RecipesState extends State<Recipes> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Container(
-      margin: EdgeInsets.only(top: 20.0, bottom: 20.0),
+      // padding: EdgeInsets.only(right:10, left: 10),
+      margin: EdgeInsets.only(top: 20.0, bottom: 20.0, right:10, left: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
         color: Color.fromRGBO(236,238,246, 0.8)

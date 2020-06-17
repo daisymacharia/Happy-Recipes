@@ -1,15 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class SelectedRecipe extends StatefulWidget {
+class HealthyRecipes extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return SelectedState();
+    return HaelthyFoodState();
   }
 }
 
-class SelectedState extends State<SelectedRecipe> {
+class HaelthyFoodState extends State<HealthyRecipes> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -25,7 +25,7 @@ class SelectedState extends State<SelectedRecipe> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Flexible(
-                  child:  Text("Soup Recipe"),
+                  child:  Text("Healthy Food"),
                   ),
                 Container( 
                   width: 50, 
@@ -54,36 +54,12 @@ class SelectedState extends State<SelectedRecipe> {
             margin: const EdgeInsets.only(right: 10.0),
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/soup-recipe.png'),
+                image: AssetImage('assets/images/light.png'),
                 fit: BoxFit.cover,
               ),
               borderRadius: BorderRadius.circular(30),
             ),
-            width: 250,
-        ),
-        Container(
-            padding: EdgeInsets.all(20),
-            margin: const EdgeInsets.only(right: 10.0),
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/soup-recipe.png'),
-                fit: BoxFit.cover,
-              ),
-              borderRadius: BorderRadius.circular(30),
-            ),
-            width: 250,
-        ),
-        Container(
-            padding: EdgeInsets.all(20),
-            margin: const EdgeInsets.only(right: 10.0),
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/soup-recipe.png'),
-                fit: BoxFit.cover,
-              ),
-              borderRadius: BorderRadius.circular(30),
-            ),
-            width: 250,
+            width: 400,
         ),
         ]
       )
