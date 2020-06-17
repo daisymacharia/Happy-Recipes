@@ -1,11 +1,31 @@
 import 'package:flutter/material.dart';
+import 'search.dart';
+import 'allRecipes.dart';
+
+class Home extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      color: Colors.grey[100],
+      padding: EdgeInsets.all(15),
+      child: Column(
+        children: <Widget> [
+          HorizontalScroll(),
+          SearchBar(),
+          Recipes(),
+        ]
+      ),
+    );
+  }
+}
 
 class HorizontalScroll extends StatelessWidget {
 
   getStarted (String imageVal, String title, String subTitle) {
     return Container(
       padding: EdgeInsets.all(20),
-      margin: const EdgeInsets.only(right: 10.0, left: 10.0),
+      margin: const EdgeInsets.only(right: 10.0),
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(imageVal),
@@ -56,9 +76,8 @@ class HorizontalScroll extends StatelessWidget {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-      margin: EdgeInsets.symmetric(vertical: 100),
+    return Container(
+      margin: EdgeInsets.only(top: 100.0, bottom: 20.0),
       height: 140,
       child: ListView(
         scrollDirection: Axis.horizontal,
@@ -67,7 +86,6 @@ class HorizontalScroll extends StatelessWidget {
           getStarted('assets/images/light.png', "Happy Food Cooking", "Get Started"),
           getStarted('assets/images/light.png', "Happy Food Cooking", "Get Started"),
         ],
-      ),
       ),
     ); 
   }

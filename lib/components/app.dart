@@ -13,7 +13,7 @@ class MyAppWidgetState extends State<MyApp> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle = TextStyle( fontSize: 30, fontWeight: FontWeight.bold);
   final _pageOptions = [
-    HorizontalScroll(),
+    Home(),
     Text(
       'Index 1: Bookmarks',
       style: optionStyle,
@@ -48,7 +48,7 @@ class MyAppWidgetState extends State<MyApp> {
             title: Text('Home'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.collections_bookmark, color: Colors.grey),
+            icon: Icon(Icons.book, color: Colors.grey),
             title: Text('Bookmarks'),
           ),
           BottomNavigationBarItem(
